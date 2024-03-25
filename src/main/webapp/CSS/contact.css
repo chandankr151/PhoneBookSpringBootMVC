@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+div {
+	border: 1px solid black;
+	width: 520px;
+	height: 430px;
+	margin-left: 450px;
+	margin-top: 120px;
+}
+
+h1 {
+	text-align: center;
+}
+
+#form1 {
+	margin-left: 10px;
+	margin-right: 10px;
+}

@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+div {
+	width: 520px;
+	height: 430px;
+	margin-left: 450px;
+	margin-top: 120px;
+	border: 2px solid black;
+	box-shadow: 10px 10px 10px 10px #FBFCFC;
+	border-radius: 8px;
+}
+
+#form1 {
+	margin-left: 125px;
+	margin-right: 10px;
+	margin-top: 50px;
+}
+
+#btn {
+	margin-left: 125px;
+}
+
+h1 {
+	text-align: center;
+}

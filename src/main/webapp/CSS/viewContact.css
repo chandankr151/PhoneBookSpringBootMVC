@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+table, th, td {
+	border: 1px solid black;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	padding: 10px;
+	margin: 20px;
+}
+
+table {
+	border: 2px solid #F8F9F9;
+	box-shadow: 8px 15px #FDFEFE;
+}
+
+h2 {
+	text-align: center;
+	font-weight: 500px solid black;
+}
+
+h5 {
+	padding-top: 20px;
+	font-weight: 500px solid black;
+}
+
+#outPopUp {
+	position: absolute;
+	margin-left: 320px;
+	margin-top: 60px;
+	border: 1px solid #F8F9F9;
+	box-shadow: 5px 10px #FDFEFE;
+}
