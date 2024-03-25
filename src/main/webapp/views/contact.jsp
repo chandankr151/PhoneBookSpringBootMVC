@@ -5,7 +5,7 @@
 
 <head>
 <title>Contact_Page</title>
-<link rel="stylesheet" href="./CSS/contact.css">
+<link rel="stylesheet" href="./CSS/editSuccess.css">
 </head>
 <body>
 	<div>

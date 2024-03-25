@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%@page import="java.util.Optional"%>
 <%@page import="org.hibernate.internal.build.AllowSysOut"%>
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
@@ -23,15 +25,13 @@
 			<table>
 				<thead></thead>
 				<tbody>
-
 					<tr>
 						<td><label>Enter Id: </label></td>
-						<td><input type="text" name="id" id="id1" required></td>
+						<td><input type="text" name="id" id="id1" disabled></td>
 					</tr>
 					<tr>
 						<td><label>Name: </label></td>
-						<td><input type="text" name="name" id="nm" required>
-						</td>
+						<td><input type="text" name="name" id="nm" required></td>
 					</tr>
 					<tr>
 						<td><label>Email: </label></td>
@@ -39,9 +39,9 @@
 					</tr>
 					<tr>
 						<td><label>Phone: </label></td>
-						<td><input type="text" name="phone" id="ph" required>
-						</td>
+						<td><input type="text" name="phone" id="ph" required></td>
 					</tr>
+
 				</tbody>
 				<tfoot>
 				</tfoot>
@@ -53,17 +53,20 @@
 
 	<script type="text/javascript">
 	
-	<%Optional<Contact> contact = (Optional) request.getAttribute("searchedData");
+		<%
+			Optional<Contact> contact = (Optional) request.getAttribute("searchedData");
 
-Long id = contact.get().getId();
-String name = contact.get().getName();
-String email = contact.get().getEmail();
-String phone = contact.get().getPhone();%>
-	/* // Get the content of the scriptlet tag */
-	var id		= "<%=id%>";
-	var name 	= "<%=name%>";
-	var email 	= "<%=email%>";
-	var phone 	= "<%=phone%>";
+			Long id = contact.get().getId();
+			String name = contact.get().getName();
+			String email = contact.get().getEmail();
+			String phone = contact.get().getPhone();
+		
+		%>
+		/* // Get the content of the scriptlet tag */
+		var id		= "<%=id%>";
+		var name 	= "<%=name%>";
+		var email 	= "<%=email%>";
+		var phone 	= "<%=phone%>";
 
 		/* Set the value of the input field with the scriptlet data */
 		document.getElementById("id1").value = id;
