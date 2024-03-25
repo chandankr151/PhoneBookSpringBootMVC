@@ -33,7 +33,7 @@ public class MainController {
 
 	@GetMapping("/")
 	public ModelAndView LoadIndexJsp() {
-		ModelAndView mv = new ModelAndView();	
+		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index");
 
 		return mv;
@@ -70,12 +70,13 @@ public class MainController {
 	}
 
 	@PostMapping("/updateContact")
-	public ModelAndView contUpdateService(HttpServletRequest request) {
+	public ModelAndView contUpdateService(HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView();
-		Long id = Long.parseLong(request.getParameter("id1"));
-		String name = request.getParameter("nm");
-		String email = request.getParameter("em");
-		String phone = request.getParameter("ph");
+		Long id = Long.parseLong(req.getParameter("id"));
+		String name = req.getParameter("name");
+		String email = req.getParameter("email");
+		String phone = req.getParameter("phone");
+
 		Contact contact = null;
 		Optional<Contact> present = view.findById(id);
 		if (present.isPresent()) {
@@ -86,7 +87,7 @@ public class MainController {
 		contact.setEmail(email);
 
 		editContact.AddContact(contact);
-		
+
 		mv.setViewName("ContactInfo");
 		return mv;
 	}
@@ -109,13 +110,13 @@ public class MainController {
 		mv.setViewName("SearchContact");
 		return mv;
 	}
-	
+
 	@GetMapping("/userEdit")
 	public ModelAndView edit_Contact(@RequestParam("id") long id) throws Exception {
-		
+
 		ModelAndView mv = new ModelAndView();
 		Optional<Contact> present = view.findById(id);
-		
+
 		if (present.isEmpty()) {
 			System.out.println("Searched Contact is not available!!!");
 			mv.setViewName("failedSearch");
@@ -127,13 +128,13 @@ public class MainController {
 
 		return mv;
 	}
-	
+
 	@GetMapping("/userDelete")
 	public ModelAndView delete_Contact(@RequestParam("id") long id) throws Exception {
-		
+
 		ModelAndView mv = new ModelAndView();
 		Optional<Contact> present = view.findById(id);
-		
+
 		if (present.isEmpty()) {
 			System.out.println("Contact is not available to delete!!!");
 			mv.setViewName("failedSearch");

@@ -12,7 +12,7 @@
 				function() {
 					alert('Contact Saved into Database Successfully');
 					// Redirect to the desired URL after the alert
-					window.location.href = '${pageContext.request.contextPath}/Context-Path';
+					window.location.href = '${pageContext.request.contextPath}/displayAll';
 				}, 10);
 	</script>
 </body>
